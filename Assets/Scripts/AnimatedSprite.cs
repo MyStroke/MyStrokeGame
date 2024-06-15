@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AnimatedHero : MonoBehaviour
+public class AnimatedSprite : MonoBehaviour
 {
     public Sprite[] sprites;
     private SpriteRenderer spriteRenderer;
