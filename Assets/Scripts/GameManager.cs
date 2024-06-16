@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour
         private set;
     }
 
+    private Player player;
+    private Spawner spawner;
+
+    // Awake
     public void Awake() {
         if (instance == null) {
             instance = this;
@@ -24,17 +28,42 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // OnDestroy
     private void OnDestroy() {
         if (instance == this) {
             instance = null;
         }
     }
 
+    // Start Game
     private void Start() {
+        player = FindObjectOfType<Player>();
+        spawner = FindObjectOfType<Spawner>();
+
         NewGame();
     }
 
+    // New Game
     private void NewGame() {
+        Monsters[] monsters = FindObjectsOfType<Monsters>();
+
+        foreach (var monster in monsters) {
+            Destroy(monster.gameObject);
+        }
+
         gameSpeed = initialGameSpeed;
+        enabled = true;
+
+        player.gameObject.SetActive(true);
+        spawner.gameObject.SetActive(true);
+    }
+
+    // Game Over
+    public void GameOver() {
+        gameSpeed =  0f;
+        enabled = false;
+
+        player.gameObject.SetActive(false);
+        spawner.gameObject.SetActive(false);
     }
 }
