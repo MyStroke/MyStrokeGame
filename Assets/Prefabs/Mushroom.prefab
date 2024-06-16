@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2472554696489379674}
   - component: {fileID: 9107263659361298826}
   - component: {fileID: 2037590764275359012}
+  - component: {fileID: 425248069374382011}
   - component: {fileID: 4917475803977781892}
   m_Layer: 0
   m_Name: Mushroom
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3487965412438110855}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.02, y: -3.47, z: 0}
+  m_LocalPosition: {x: 4.02, y: -3.47, z: -4.024582}
   m_LocalScale: {x: 3.6962202, y: 3.6962202, z: 3.6962202}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -107,6 +108,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.34, y: 0.67, z: 0.20000003}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &425248069374382011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3487965412438110855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51bfaeb8c5503084fa9931a3b73cf061, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &4917475803977781892
 MonoBehaviour:
   m_ObjectHideFlags: 0

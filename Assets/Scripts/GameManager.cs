@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     }
 
     public float initialGameSpeed = 5f;
-    public float gameSpeedIncrement = 0.1f;
+    public float gameSpeedIncrement = 1f;
     public float gameSpeed {
         get;
         private set;
@@ -36,9 +36,5 @@ public class GameManager : MonoBehaviour
 
     private void NewGame() {
         gameSpeed = initialGameSpeed;
-    }
-
-    private void Update() {
-        gameSpeed += gameSpeedIncrement * Time.deltaTime;
     }
 }

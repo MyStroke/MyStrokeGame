@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 400692021427469001}
   - component: {fileID: 6877668788197288437}
   - component: {fileID: 3631597271924498637}
+  - component: {fileID: -5891705580947185788}
   - component: {fileID: 2085994997889312460}
   m_Layer: 0
   m_Name: Goblin
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 982463471922941412}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.99, y: -3.73, z: 0}
+  m_LocalPosition: {x: 3.99, y: -3.73, z: -4.024582}
   m_LocalScale: {x: 3.092886, y: 3.092886, z: 3.092886}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -107,6 +108,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.53, y: 0.7, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-5891705580947185788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982463471922941412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51bfaeb8c5503084fa9931a3b73cf061, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2085994997889312460
 MonoBehaviour:
   m_ObjectHideFlags: 0
