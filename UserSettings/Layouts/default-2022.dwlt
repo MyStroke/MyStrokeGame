@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 1037
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 3}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -148,7 +148,11 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
+<<<<<<< HEAD
   controlID: 39
+=======
+  controlID: 95
+>>>>>>> 5ed8e4c09c0270d0b5197f224cebd7122c3be278
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -818,9 +822,15 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
     m_Target: {x: 241.21333, y: 381.2654, z: -2.5139031}
     speed: 2
     m_Value: {x: 241.21333, y: 381.2654, z: -2.5139031}
+=======
+    m_Target: {x: -2.005766, y: 416.98254, z: -2.1088743}
+    speed: 2
+    m_Value: {x: -2.005766, y: 416.98254, z: -2.1088743}
+>>>>>>> 5ed8e4c09c0270d0b5197f224cebd7122c3be278
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -870,9 +880,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< HEAD
     m_Target: 491.83783
     speed: 2
     m_Value: 491.83783
+=======
+    m_Target: 451.33548
+    speed: 2
+    m_Value: 451.33548
+>>>>>>> 5ed8e4c09c0270d0b5197f224cebd7122c3be278
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1084,7 +1100,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: d67b0000e265000072650000406c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1149,7 +1165,11 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
+<<<<<<< HEAD
   m_LastSelectedObjectID: -22756
+=======
+  m_LastSelectedObjectID: -10654
+>>>>>>> 5ed8e4c09c0270d0b5197f224cebd7122c3be278
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
