@@ -17,8 +17,10 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreUpdate; // Score
     public Button retryButton; // Retry Button
 
+    // Get all files
     private Player player;
     private Spawner spawner;
+    private BoxShow boxShow;
 
     private float score;
 
@@ -42,6 +44,7 @@ public class GameManager : MonoBehaviour
     private void Start() {
         player = FindObjectOfType<Player>();
         spawner = FindObjectOfType<Spawner>();
+        boxShow = FindObjectOfType<BoxShow>();
 
         NewGame();
     }
@@ -79,5 +82,12 @@ public class GameManager : MonoBehaviour
     private void Update() {
         score += gameSpeed * Time.deltaTime;
         scoreUpdate.text = $"{score:0}";
+    }
+
+    // Popup box for prediction
+    public void BoxProcess() {
+        gameSpeed = 0f;
+        spawner.gameObject.SetActive(false);
+        boxShow.ShowBox();
     }
 }
