@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 1037
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 3}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 39
+  controlID: 111
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -425,7 +425,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: fafaffff
+      m_ExpandedIDs: 4e81ffffb284ffff0288ffff06c1ffff5ec2ffff8ed4fffffafaffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -818,9 +818,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 108.28263, y: 428.92355, z: -4.6665325}
+    m_Target: {x: 228.51152, y: 412.30634, z: -2.3937166}
     speed: 2
-    m_Value: {x: 108.28263, y: 428.92355, z: -4.6665325}
+    m_Value: {x: 228.51152, y: 412.30634, z: -2.3937166}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -870,9 +870,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 476.6538
+    m_Target: 249.37137
     speed: 2
-    m_Value: 476.6538
+    m_Value: 249.37137
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1012,7 +1012,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1020,15 +1020,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 74
   m_LastFolders:
-  - Assets
+  - Assets/Scripts
   m_LastFoldersGridSize: 74
   m_LastProjectPath: E:\Code\Unity\Project\MyStrokeGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: fe650000
-    m_LastClickedID: 26110
+    m_SelectedIDs: 1a660000
+    m_LastClickedID: 26138
     m_ExpandedIDs: 00000000fe65000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1084,8 +1084,8 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: d67b0000e265000072650000406c0000
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: d67b0000e265000072650000406c00004c630000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1149,7 +1149,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -22756
+  m_LastSelectedObjectID: -17088
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
