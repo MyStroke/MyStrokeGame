@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     private Player player;
     private Spawner spawner;
     private BoxShow boxShow;
+    private Countdown countdown;
 
     private float score;
 
@@ -45,6 +46,7 @@ public class GameManager : MonoBehaviour
         player = FindObjectOfType<Player>();
         spawner = FindObjectOfType<Spawner>();
         boxShow = FindObjectOfType<BoxShow>();
+        countdown = FindObjectOfType<Countdown>();
 
         NewGame();
     }
@@ -61,7 +63,7 @@ public class GameManager : MonoBehaviour
         gameSpeed = initialGameSpeed;
         enabled = true;
 
-        player.gameObject.SetActive(true);
+        player.animator.Play("HeroKnight_Run");
         spawner.gameObject.SetActive(true);
         gameOverText.gameObject.SetActive(false);
         retryButton.gameObject.SetActive(false);
@@ -72,7 +74,7 @@ public class GameManager : MonoBehaviour
         gameSpeed =  0f;
         enabled = false;
 
-        player.gameObject.SetActive(false);
+        player.animator.Play("HeroKnight_death");
         spawner.gameObject.SetActive(false);
         gameOverText.gameObject.SetActive(true);
         retryButton.gameObject.SetActive(true);
@@ -90,5 +92,6 @@ public class GameManager : MonoBehaviour
         gameSpeed = 0f;
         spawner.gameObject.SetActive(false);
         boxShow.ShowBox();
+        countdown.TimerOn = true;
     }
 }

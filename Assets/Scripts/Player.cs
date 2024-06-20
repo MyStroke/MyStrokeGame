@@ -7,15 +7,17 @@ public class Player : MonoBehaviour
     // Setting variable
     private CharacterController character;
     private Vector3 direction;
-    Animator animator;
+    public Animator animator { get; private set; }
 
     // import all file
 
     // Awake
-    void Awake()
+    private void Awake()
     {
-        animator = this.gameObject.GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         character = GetComponent<CharacterController>();
+
+        animator.Play("HeroKnight_Run");
     }
 
     private void OnEnable()
@@ -24,7 +26,7 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         
     }
