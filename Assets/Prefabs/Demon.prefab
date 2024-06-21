@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8824178098836863341}
   - component: {fileID: 4062977865608125002}
   - component: {fileID: 5602638860905357848}
+  - component: {fileID: 8114285555718330184}
   - component: {fileID: -7351510897542003781}
-  - component: {fileID: 691480995853837246}
   m_Layer: 0
   m_Name: Demon
   m_TagString: Monsters
@@ -108,6 +108,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.5999999, y: 1.4399999, z: 0.19999999}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &8114285555718330184
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5120902794713048783}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9baaa4e2da349b949b26969d8c6c6d47, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &-7351510897542003781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,22 +141,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51bfaeb8c5503084fa9931a3b73cf061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &691480995853837246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5120902794713048783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c7720160094c194c963510530d5eba6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: 1551171789, guid: fe6e494d10aaae7428a29ca1aebb9dd2, type: 3}
-  - {fileID: 1604675862, guid: fe6e494d10aaae7428a29ca1aebb9dd2, type: 3}
-  - {fileID: -1491206999, guid: fe6e494d10aaae7428a29ca1aebb9dd2, type: 3}
-  - {fileID: -2121164949, guid: fe6e494d10aaae7428a29ca1aebb9dd2, type: 3}
-  - {fileID: -1689536943, guid: fe6e494d10aaae7428a29ca1aebb9dd2, type: 3}
-  - {fileID: 692624432, guid: fe6e494d10aaae7428a29ca1aebb9dd2, type: 3}

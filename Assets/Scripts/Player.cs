@@ -9,7 +9,12 @@ public class Player : MonoBehaviour
     private Vector3 direction;
     public Animator animator { get; private set; }
 
+    // Setting Attack List
+    private string[] attackList = {"HeroKnight_Attack1", "HeroKnight_Attack2", "HeroKnight_Attack3"};
+    private static System.Random rnd = new System.Random();
+
     // import all file
+    private GameManager gameManager;
 
     // Awake
     private void Awake()
@@ -34,6 +39,17 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Monsters")) {
             GameManager.instance.BoxProcess();
+
+            // Random Attack
+            int acttackIndex = RandomAttack();
+            animator.Play(attackList[acttackIndex]);
         }
+    }
+
+    // Random Attack
+    private int RandomAttack()
+    {
+        int index = rnd.Next(attackList.Length);
+        return index;
     }
 }

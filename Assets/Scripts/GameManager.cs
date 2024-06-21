@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     private Spawner spawner;
     private BoxShow boxShow;
     private Countdown countdown;
-
+    
     private float score;
 
     // Awake

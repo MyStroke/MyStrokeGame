@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 6577237315405209051}
   - component: {fileID: 7696378055939518683}
   - component: {fileID: 8220499132550400756}
+  - component: {fileID: 9206811668804840075}
   - component: {fileID: 459496794331685651}
-  - component: {fileID: 2519689644096189644}
   m_Layer: 0
   m_Name: Blue_Slime
   m_TagString: Monsters
@@ -108,6 +108,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.69, y: 1.28, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &9206811668804840075
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400384501772409918}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ab128172d0c741b4dac04c7c3817a9cf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &459496794331685651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,23 +141,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51bfaeb8c5503084fa9931a3b73cf061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2519689644096189644
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 400384501772409918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c7720160094c194c963510530d5eba6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: -2074892077, guid: c1c70d5268195274994809921d20199c, type: 3}
-  - {fileID: -774047362, guid: c1c70d5268195274994809921d20199c, type: 3}
-  - {fileID: 2089142663, guid: c1c70d5268195274994809921d20199c, type: 3}
-  - {fileID: -410848987, guid: c1c70d5268195274994809921d20199c, type: 3}
-  - {fileID: -385112549, guid: c1c70d5268195274994809921d20199c, type: 3}
-  - {fileID: -1611259000, guid: c1c70d5268195274994809921d20199c, type: 3}
-  - {fileID: 1937287438, guid: c1c70d5268195274994809921d20199c, type: 3}

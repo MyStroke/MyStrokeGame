@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1426177292749084545}
   - component: {fileID: 7109218372951171987}
   - component: {fileID: 7171310242703452869}
+  - component: {fileID: -4593015368109521685}
   - component: {fileID: -4044512869179080706}
-  - component: {fileID: 924848666562994436}
   m_Layer: 0
   m_Name: Red_Slime
   m_TagString: Monsters
@@ -108,6 +108,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.69, y: 1.28, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &-4593015368109521685
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5982778704589003230}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3a8f057fefd54e54e95d1171fde03c5b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &-4044512869179080706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,24 +141,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51bfaeb8c5503084fa9931a3b73cf061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &924848666562994436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5982778704589003230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c7720160094c194c963510530d5eba6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprites:
-  - {fileID: -981299657, guid: d157176824d492546a16e3532868d76e, type: 3}
-  - {fileID: 1853547289, guid: d157176824d492546a16e3532868d76e, type: 3}
-  - {fileID: 350612240, guid: d157176824d492546a16e3532868d76e, type: 3}
-  - {fileID: 643874186, guid: d157176824d492546a16e3532868d76e, type: 3}
-  - {fileID: 72328820, guid: d157176824d492546a16e3532868d76e, type: 3}
-  - {fileID: 2098293959, guid: d157176824d492546a16e3532868d76e, type: 3}
-  - {fileID: -1376773283, guid: d157176824d492546a16e3532868d76e, type: 3}
-  - {fileID: -1604212801, guid: d157176824d492546a16e3532868d76e, type: 3}
