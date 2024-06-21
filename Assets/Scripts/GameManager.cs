@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
+[DefaultExecutionOrder(-1)]
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance { get; private set; }
@@ -22,8 +21,8 @@ public class GameManager : MonoBehaviour
     private Spawner spawner;
     private BoxShow boxShow;
     private Countdown countdown;
-    
-    private float score;
+
+    private int score = 0;
 
     // Awake
     public void Awake() {
@@ -59,7 +58,7 @@ public class GameManager : MonoBehaviour
             Destroy(monster.gameObject);
         }
 
-        score = 0f;
+        score = 0;
         gameSpeed = initialGameSpeed;
         enabled = true;
 
@@ -67,6 +66,11 @@ public class GameManager : MonoBehaviour
         spawner.gameObject.SetActive(true);
         gameOverText.gameObject.SetActive(false);
         retryButton.gameObject.SetActive(false);
+
+        // Timer
+        countdown.TimerOn = true;
+        countdown.TimeLeft = 10;
+        countdown.TimerOn = false;
     }
 
     // Game Over
@@ -83,8 +87,7 @@ public class GameManager : MonoBehaviour
 
     // Update
     private void Update() {
-        score += gameSpeed * Time.deltaTime;
-        scoreUpdate.text = $"{score:0}";
+        scoreUpdate.text = score.ToString("D3");
     }
 
     // Popup box for prediction
@@ -93,5 +96,34 @@ public class GameManager : MonoBehaviour
         spawner.gameObject.SetActive(false);
         boxShow.ShowBox();
         countdown.TimerOn = true;
+    }
+
+    // Destroy Monsters
+    public void DestroyMonsters()
+    {
+        Monsters[] monsters = FindObjectsOfType<Monsters>();
+
+        foreach (var monster in monsters)
+        {
+            Destroy(monster.gameObject);
+        }
+
+    }
+
+    // Continue Game
+    public void ContinueGame()
+    {
+        gameSpeed = initialGameSpeed;
+        enabled = true;
+        countdown.TimerOn = false;
+        player.animator.Play("HeroKnight_Run");
+        score += 1;
+        DestroyMonsters();
+        player.gameObject.SetActive(true);
+        spawner.gameObject.SetActive(true);
+        gameOverText.gameObject.SetActive(false);
+        retryButton.gameObject.SetActive(false);
+        boxShow.box.SetActive(false);
+        countdown.TimeLeft = 10;
     }
 }

@@ -11,10 +11,14 @@ public class Countdown : MonoBehaviour
 
     // import all files
     private GameManager gameManager;
+    private RandomML randomML;
+    private API data;
 
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+        data = FindObjectOfType<API>();
+        randomML = FindObjectOfType<RandomML>();
     }
 
     void Update()
@@ -25,6 +29,11 @@ public class Countdown : MonoBehaviour
             {
                 TimeLeft -= Time.deltaTime;
                 updateTimer(TimeLeft);
+
+                if (data.GetPrediction() != null && data.GetPrediction() == randomML.randomLabel)
+                {
+                    gameManager.ContinueGame();
+                }
             }
             else
             {
