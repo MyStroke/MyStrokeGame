@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     private Spawner spawner;
     private BoxShow boxShow;
     private Countdown countdown;
+    private SpawnBoss spawnBoss;
 
     private int score = 0;
 
@@ -46,6 +47,7 @@ public class GameManager : MonoBehaviour
         spawner = FindObjectOfType<Spawner>();
         boxShow = FindObjectOfType<BoxShow>();
         countdown = FindObjectOfType<Countdown>();
+        spawnBoss = FindObjectOfType<SpawnBoss>();
 
         NewGame();
     }
@@ -66,6 +68,9 @@ public class GameManager : MonoBehaviour
         spawner.gameObject.SetActive(true);
         gameOverText.gameObject.SetActive(false);
         retryButton.gameObject.SetActive(false);
+        spawnBoss.gameObject.SetActive(false);
+        boxShow.box.SetActive(false);
+        boxShow.objBoss.SetActive(false);
 
         // Update Timer
         countdown.TimeLeft = 10;
@@ -77,17 +82,25 @@ public class GameManager : MonoBehaviour
     public void GameOver() {
         gameSpeed =  0f;
         enabled = false;
+        countdown.bossScore = 0;
 
         player.animator.Play("HeroKnight_death");
         spawner.gameObject.SetActive(false);
         gameOverText.gameObject.SetActive(true);
         retryButton.gameObject.SetActive(true);
         boxShow.box.SetActive(false);
+        boxShow.objBoss.SetActive(false);
     }
 
     // Update
     private void Update() {
         scoreUpdate.text = score.ToString();
+
+        // If score & 10 == 0 then spwan boss
+        if (score % 10 == 0 && score != 0) {
+            spawner.gameObject.SetActive(false);
+            spawnBoss.gameObject.SetActive(true);
+        }
     }
 
     // Popup box for prediction
@@ -95,6 +108,13 @@ public class GameManager : MonoBehaviour
         gameSpeed = 0f;
         spawner.gameObject.SetActive(false);
         boxShow.ShowBox();
+        countdown.TimerOn = true;
+    }
+
+    public void BoxProcessBoss() {
+        gameSpeed = 0f;
+        spawnBoss.gameObject.SetActive(false);
+        boxShow.ShowBoxBoss();
         countdown.TimerOn = true;
     }
 
@@ -122,5 +142,7 @@ public class GameManager : MonoBehaviour
         gameOverText.gameObject.SetActive(false);
         retryButton.gameObject.SetActive(false);
         boxShow.box.SetActive(false);
+        boxShow.objBoss.SetActive(false);
+        spawnBoss.gameObject.SetActive(false);
     }
 }

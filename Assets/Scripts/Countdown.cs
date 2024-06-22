@@ -14,9 +14,14 @@ public class Countdown : MonoBehaviour
     private RandomML randomML;
     private API data;
     private Player player;
+    private BoxShow boxShow;
 
-    void Start()
-    {
+    // Setting
+    public bool bossSpawned = false;
+    private int timeCurrent = 10;
+    public int bossScore = 0;
+
+    void Start() {
         gameManager = FindObjectOfType<GameManager>();
         data = FindObjectOfType<API>();
         randomML = FindObjectOfType<RandomML>();
@@ -27,33 +32,72 @@ public class Countdown : MonoBehaviour
     {
         if (TimerOn)
         {
-            if (TimeLeft > 0)
-            {
-                TimeLeft -= Time.deltaTime;
-                updateTimer(TimeLeft);
+            // Check if the boss is spawned
+            if (!bossSpawned) {
+                if (TimeLeft > 0) {
+                    TimeLeft -= Time.deltaTime;
+                    updateTimer(TimeLeft);
 
-                if (data.GetPrediction() != null && data.GetPrediction() == randomML.randomLabel)
-                {
-                    player.animator.Play("HeroKnight_Run");
-                    updateTimer(9);
-                    TimerOn = false;
-                    gameManager.ContinueGame();
+                    if (data.GetPrediction() != null && data.GetPrediction() == randomML.randomLabel)
+                    {
+                        player.animator.Play("HeroKnight_Run");
+                        updateTimer(timeCurrent - 1);
+                        TimerOn = false;
+                        gameManager.ContinueGame();
 
-                    // Reset the timer
+                        // Reset the timer
+                        TimeLeft = timeCurrent;
+                    }
+                } else {
                     TimeLeft = 10;
+                    TimerOn = false;
+                    gameManager.GameOver();
                 }
             }
-            else
-            {
-                TimeLeft = 10;
-                TimerOn = false;
-                gameManager.GameOver();
+            else {
+                if (TimeLeft > 0) {
+                    TimeLeft -= Time.deltaTime;
+                    updateTimer(TimeLeft);
+
+                    if (data.GetPrediction() != null && data.GetPrediction() == randomML.randomLabel)
+                    {
+                        int acttackIndex = player.RandomAttack();
+                        player.animator.Play(player.attackList[acttackIndex]);
+
+                        // Check if the boss is defeated
+                        bossScore += 1;
+                        randomML.RandomMLBox();
+
+                        if (bossScore >= 3) {
+                            player.animator.Play("HeroKnight_Run");
+                            updateTimer(timeCurrent - 1);
+                            TimerOn = false;
+                            gameManager.ContinueGame();
+
+                            // Reset the timer
+                            TimeLeft = timeCurrent;
+
+                            // Reset the boss info
+                            bossScore = 0;
+                            bossSpawned = false;
+                        }
+                        else {
+                            // Reset the timer
+                            TimeLeft = timeCurrent;
+                            updateTimer(timeCurrent - 1);
+                        }
+                    }
+                } else {
+                    TimeLeft = 10;
+                    TimerOn = false;
+                    gameManager.GameOver();
+                }
             }
         }
     }
 
-    public void updateTimer(float currentTime)
-    {
+    // Update Timer
+    public void updateTimer(float currentTime) {
         currentTime += 1;
 
         float seconds = Mathf.FloorToInt(currentTime % 60);

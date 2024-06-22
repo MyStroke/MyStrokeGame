@@ -10,17 +10,20 @@ public class Player : MonoBehaviour
     public Animator animator { get; private set; }
 
     // Setting Attack List
-    private string[] attackList = {"HeroKnight_Attack1", "HeroKnight_Attack2", "HeroKnight_Attack3"};
+    public string[] attackList = {"HeroKnight_Attack1", "HeroKnight_Attack2", "HeroKnight_Attack3"};
     private static System.Random rnd = new System.Random();
+    private string AttackName;
 
     // import all file
     private GameManager gameManager;
+    private Countdown countdown;
 
     // Awake
     private void Awake()
     {
         animator = GetComponent<Animator>();
         character = GetComponent<CharacterController>();
+        countdown = FindObjectOfType<Countdown>();
 
         animator.Play("HeroKnight_Run");
     }
@@ -43,11 +46,21 @@ public class Player : MonoBehaviour
             // Random Attack
             int acttackIndex = RandomAttack();
             animator.Play(attackList[acttackIndex]);
+        } 
+
+        // if player hit the boss
+        else if (other.CompareTag("Boss")) {
+            GameManager.instance.BoxProcessBoss();
+            countdown.bossSpawned = true; // Set Boss Spawned
+
+            // Random Attack
+            int acttackIndex = RandomAttack();
+            animator.Play(attackList[acttackIndex]);
         }
     }
 
     // Random Attack
-    private int RandomAttack()
+    public int RandomAttack()
     {
         int index = rnd.Next(attackList.Length);
         return index;
