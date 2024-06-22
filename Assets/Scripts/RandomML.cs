@@ -2,62 +2,35 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-using UnityEngine.Video;
+using UnityEngine.UI;
 using TMPro;
 
 public class RandomML : MonoBehaviour
 {
-    private string[] labels = {"FL", "Hc", "Hh", "LF", "OK", "PO", "RL", "TF", "Tu", "WBM", "Wd", "oP"};
+    private string[] labels = { "FL", "Hc", "Hh", "LF", "OK", "PO", "RL", "TF", "Tu", "WBM", "Wd", "oP" };
     private static System.Random rnd = new System.Random();
     public string randomLabel;
+    private Animator animator;
 
     // Import all files
     private API data;
 
     // TextUI for ML
     public TextMeshProUGUI TextML;
-    
-    // Video
-    // public VideoPlayer videoPlayer;
-
-    // // Mapping of labels to video file paths
-    // private Dictionary<string, string> labelToVideoPath = new Dictionary<string, string>();
-    // public string[] videoFiles;
+    public Image ImageML;
 
     void Start()
     {
         data = FindObjectOfType<API>();
-
-        // Assuming videoFiles have been filled elsewhere or manually in the editor
-        // Initialize labelToVideoPath mapping
-        // InitializeVideoMapping();
+        animator = ImageML.GetComponent<Animator>();
     }
-
-    // void InitializeVideoMapping()
-    // {
-    //     // Assuming videoFiles is already populated with paths like "../Assets/VideoHand/FL.mp4"
-    //     foreach (string videoPath in videoFiles)
-    //     {
-    //         string fileName = Path.GetFileNameWithoutExtension(videoPath);
-    //         if (Array.Exists(labels, label => label == fileName))
-    //         {
-    //             labelToVideoPath[fileName] = videoPath;
-    //         }
-    //     }
-    // }
 
     public void RandomMLBox()
     {
         int randomIndex = RandomML2();
         randomLabel = labels[randomIndex];
         TextML.text = randomLabel;
-
-        // Play the video corresponding to the random label
-        // if (labelToVideoPath.TryGetValue(randomLabel, out string videoPath))
-        // {
-        //     videoPlayer.url = System.IO.Path.Combine(Application.streamingAssetsPath, videoPath);
-        //     videoPlayer.Play();
-        // }
+        animator.Play(randomLabel);
     }
 
     private int RandomML2()

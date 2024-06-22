@@ -67,9 +67,9 @@ public class GameManager : MonoBehaviour
         gameOverText.gameObject.SetActive(false);
         retryButton.gameObject.SetActive(false);
 
-        // Timer
-        countdown.TimerOn = true;
+        // Update Timer
         countdown.TimeLeft = 10;
+        countdown.updateTimer(9);
         countdown.TimerOn = false;
     }
 
@@ -87,7 +87,7 @@ public class GameManager : MonoBehaviour
 
     // Update
     private void Update() {
-        scoreUpdate.text = score.ToString("D3");
+        scoreUpdate.text = score.ToString();
     }
 
     // Popup box for prediction
@@ -115,8 +115,6 @@ public class GameManager : MonoBehaviour
     {
         gameSpeed = initialGameSpeed;
         enabled = true;
-        countdown.TimerOn = false;
-        player.animator.Play("HeroKnight_Run");
         score += 1;
         DestroyMonsters();
         player.gameObject.SetActive(true);
@@ -124,6 +122,5 @@ public class GameManager : MonoBehaviour
         gameOverText.gameObject.SetActive(false);
         retryButton.gameObject.SetActive(false);
         boxShow.box.SetActive(false);
-        countdown.TimeLeft = 10;
     }
 }

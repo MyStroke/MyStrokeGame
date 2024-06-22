@@ -13,12 +13,14 @@ public class Countdown : MonoBehaviour
     private GameManager gameManager;
     private RandomML randomML;
     private API data;
+    private Player player;
 
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
         data = FindObjectOfType<API>();
         randomML = FindObjectOfType<RandomML>();
+        player = FindObjectOfType<Player>();
     }
 
     void Update()
@@ -32,7 +34,13 @@ public class Countdown : MonoBehaviour
 
                 if (data.GetPrediction() != null && data.GetPrediction() == randomML.randomLabel)
                 {
+                    player.animator.Play("HeroKnight_Run");
+                    updateTimer(9);
+                    TimerOn = false;
                     gameManager.ContinueGame();
+
+                    // Reset the timer
+                    TimeLeft = 10;
                 }
             }
             else
@@ -44,7 +52,7 @@ public class Countdown : MonoBehaviour
         }
     }
 
-    void updateTimer(float currentTime)
+    public void updateTimer(float currentTime)
     {
         currentTime += 1;
 
