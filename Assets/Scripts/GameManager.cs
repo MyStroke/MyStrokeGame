@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     private SpawnBoss spawnBoss;
 
     private int score = 0;
+    private int previousScore = 0;
 
     // Awake
     public void Awake() {
@@ -74,6 +75,7 @@ public class GameManager : MonoBehaviour
 
         // Update Timer
         countdown.TimeLeft = 10;
+        countdown.timeCurrent = 10;
         countdown.updateTimer(9);
         countdown.TimerOn = false;
     }
@@ -100,6 +102,14 @@ public class GameManager : MonoBehaviour
         if (score % 10 == 0 && score != 0) {
             spawner.gameObject.SetActive(false);
             spawnBoss.gameObject.SetActive(true);
+        }
+
+        // Every 10 score time - 1 second but not less than 5 seconds
+        if (score >= 10 && score % 10 == 0 && score != previousScore) {
+            int newTime = 10 - (score / 10);
+            countdown.timeCurrent = Mathf.Max(newTime, 5);
+            countdown.updateTimer(countdown.timeCurrent);
+            previousScore = score;
         }
     }
 

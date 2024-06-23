@@ -18,7 +18,7 @@ public class Countdown : MonoBehaviour
 
     // Setting
     public bool bossSpawned = false;
-    private int timeCurrent = 10;
+    public int timeCurrent = 10;
     public int bossScore = 0;
 
     void Start() {
