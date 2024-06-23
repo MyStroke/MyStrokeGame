@@ -92,6 +92,11 @@ public class GameManager : MonoBehaviour
         retryButton.gameObject.SetActive(true);
         boxShow.box.SetActive(false);
         boxShow.objBoss.SetActive(false);
+
+        // Output Score
+        foreach (var score in countdown.scoreOutput) {
+            Debug.Log(score.Key + " : " + score.Value);
+        }
     }
 
     // Update

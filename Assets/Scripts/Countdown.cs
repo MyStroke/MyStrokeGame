@@ -1,3 +1,4 @@
+using System.Collections.Generic; 
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,6 +22,9 @@ public class Countdown : MonoBehaviour
     public int timeCurrent = 10;
     public int bossScore = 0;
 
+    // Score Output
+    public Dictionary<string, int> scoreOutput = new Dictionary<string, int>();
+
     void Start() {
         gameManager = FindObjectOfType<GameManager>();
         data = FindObjectOfType<API>();
@@ -40,6 +44,14 @@ public class Countdown : MonoBehaviour
 
                     if (data.GetPrediction() != null && data.GetPrediction() == randomML.randomLabel)
                     {
+                        // Store the prediction in scoreOutput and increment the score
+                        string prediction = data.GetPrediction();
+                        if (scoreOutput.ContainsKey(prediction)) {
+                            scoreOutput[prediction] += 1;
+                        } else {
+                            scoreOutput[prediction] = 1;
+                        }
+
                         player.animator.Play("HeroKnight_Run");
                         updateTimer(timeCurrent - 1);
                         TimerOn = false;
@@ -61,6 +73,14 @@ public class Countdown : MonoBehaviour
 
                     if (data.GetPrediction() != null && data.GetPrediction() == randomML.randomLabel)
                     {
+                        // Store the prediction in scoreOutput and increment the score
+                        string prediction = data.GetPrediction();
+                        if (scoreOutput.ContainsKey(prediction)) {
+                            scoreOutput[prediction] += 1;
+                        } else {
+                            scoreOutput[prediction] = 1;
+                        }
+
                         int acttackIndex = player.RandomAttack();
                         player.animator.Play(player.attackList[acttackIndex]);
 
@@ -105,5 +125,4 @@ public class Countdown : MonoBehaviour
         TimerTxt.text = string.Format("{0:00}", seconds);
         TimerTxt.text = TimerTxt.text + " s"; 
     }
-
 }
