@@ -19,6 +19,9 @@ public class RandomML : MonoBehaviour
     public TextMeshProUGUI TextML;
     public Image ImageML;
 
+    // Image for ML
+    public Sprite[] ImageMLs;
+
     void Start()
     {
         data = FindObjectOfType<API>();
@@ -30,7 +33,7 @@ public class RandomML : MonoBehaviour
         int randomIndex = RandomML2();
         randomLabel = labels[randomIndex];
         TextML.text = randomLabel;
-        animator.Play(randomLabel);
+        ImageML.sprite = ImageMLs[randomIndex];
     }
 
     private int RandomML2()
